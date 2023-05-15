@@ -25,3 +25,4 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Sever is up'));
 });
+//fhcdsy
