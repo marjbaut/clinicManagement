@@ -12,7 +12,7 @@ id: {
     autoIncrement: true,
     },
 patient_id: {
-    type: DataTypes.INT,
+    type: DataTypes.INTEGER,
     allowNull: false,
     references: {
         model: 'patient',
@@ -20,7 +20,7 @@ patient_id: {
         },
     },
 doctor_id: {
-    type: DataTypes.INT,
+    type: DataTypes.INTEGER,
     allowNull: false,
     references: {
         model: 'medicalStaff',

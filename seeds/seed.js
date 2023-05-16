@@ -1,6 +1,6 @@
 const sequelize = require('../config/connection');
-const { Specialty, MedicalStaff, Patient } = require('../models');
-// Appointment
+const { Specialty, MedicalStaff, Patient, Appointment } = require('../models');
+
 const specialtyData = require('./specialtyData.json');
 const medicalStaffData = require('./medicalStaffData.json');
 const patientData = require('./patientData.json');

@@ -25,5 +25,5 @@ app.use(controllers);
 //connecting to the database then running the server
 sequelize.sync({ force: false }).then(() => {
 
-  app.listen(PORT, () => console.log('Sever is up'));
+  app.listen(PORT, () => console.log('Server is up'));
 });
