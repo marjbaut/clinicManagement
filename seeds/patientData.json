@@ -1,0 +1,90 @@
+
+[
+    {
+        "mrn":46729,
+        "first_name":"Samantha",
+        "last_name":"Cosby",
+        "date_of_birth":,
+        "gender":"Female",
+        "address":"3812 Tace Ln Duluth GA 30067",
+        "phone_number":"4049781211",
+        "email":"samcosby@gamil.com",
+        "medical_notes":"Has stomach pain",
+        "primary_doctorId":1
+    },
+    {
+        "mrn":23821,
+        "first_name":"Frank",
+        "last_name":"James",
+        "date_of_birth":,
+        "gender":"Male",
+        "address":"139 Glue Dr Atlanta GA 30045",
+        "phone_number":"5644473001",
+        "email":"frankjames@gmail.com",
+        "medical_notes":"",
+        "primary_doctorId":2
+    },
+    {
+        "mrn":648349,
+        "first_name":"Lupe",
+        "last_name":"Reyes",
+        "date_of_birth":,
+        "gender":"Female",
+        "address":"9098 Vert Rd Atlanta GA 30028",
+        "phone_number":"7895641312",
+        "email":"lupereyes@gmail.com",
+        "medical_notes":"Fractured arm",
+        "primary_doctorId":3
+    },
+    {
+        "mrn":238273,
+        "first_name":"Ken",
+        "last_name":"Tran",
+        "date_of_birth":,
+        "gender":"Male",
+        "address":"4567 Bulk Rd Orlando FL 40056",
+        "phone_number":"4563459956",
+        "email":"kentran@gmail.com",
+        "medical_notes":"",
+        "primary_doctorId":4
+    },
+    {
+        "mrn":348748,
+        "first_name":"Lenard",
+        "last_name":"Sanchez",
+        "date_of_birth":,
+        "gender":"Male",
+        "address":"435 Ridge Ct San Diego CA 60098",
+        "phone_number":"6784567778",
+        "email":"lenardsanchez@yahoo.com",
+        "medical_notes":"",
+        "primary_doctorId":5
+    },
+    {
+        "mrn":3298437,
+        "first_name":"Rosie",
+        "last_name":"Thomas",
+        "date_of_birth":,
+        "gender":"Female",
+        "address":"9012 Glenwood Dr Nashville TN 70903",
+        "phone_number":"3542971553",
+        "email":"rosiethomas@yahoo.com",
+        "medical_notes":"",
+        "primary_doctorId":6
+    },
+    {
+        "mrn":438748,
+        "first_name":"Erica",
+        "last_name":"Jill",
+        "date_of_birth":,
+        "gender":"Female",
+        "address":"876 Deli Lane Atlanta GA 30027",
+        "phone_number":"5600037216",
+        "email":"ericajill@gmail.com",
+        "medical_notes":"",
+        "primary_doctorId":1
+    }
+
+]
+
+
