@@ -2,6 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class MedicalStaff extends Model { }
+const bcrypt = require('bcrypt');
 
 MedicalStaff.init(
     {
@@ -23,19 +24,35 @@ MedicalStaff.init(
         type: DataTypes.STRING,
         allowNull: false,
         },
-    phone_number:{
-        type: DataTypes.VARCHAR,
-        allowNull:false,
-        },
-    email:{
+    email: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
+        validate: {
+        isEmail: true,
+      },
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      // must be longer than 8 characters
+      validate: {
+        len: [8],
+      },
+    },
+    phone_number:{
+        type: DataTypes.STRING,
+        allowNull:false,
+        validate: {
+            len: [10],
+          },
         },
-    medical_notes:{
-        type: DataTypes.TEXT,
+
+    role:{
+        type: DataTypes.STRING,
          allowNull: false,
         },
-    primary_doctorId:{
+    specialist_id:{
         type: DataTypes.INTEGER,
         allowNull: false, 
         references:{
@@ -45,12 +62,24 @@ MedicalStaff.init(
         },
     },
     {
+        hooks: {
+          beforeCreate: async (newUserData) => {
+            newUserData.password = await bcrypt.hash(newUserData.password, 10);
+            return newUserData;
+          },
+          beforeUpdate: async (updatedUserData) => {
+            if (updatedUserData.password) {
+            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+            }
+            return updatedUserData;
+          },
+        },
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'medicalStaff'
-    }
+        modelName: 'medicalStaff',
+      }
 );
 
 module.exports = MedicalStaff;

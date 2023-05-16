@@ -11,6 +11,9 @@ CREATE TABLE MedicalStaff (
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     gender VARCHAR(10) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+     -- I added this 
+    password VARCHAR(255) NOT NULL, 
     phone_number VARCHAR(20) NOT NULL,
     role VARCHAR(255) NOT NULL,
      specialty_id INT NOT NULL REFERENCES Specialty(id)
@@ -33,7 +36,7 @@ CREATE TABLE Patient (
 
 -- appointment_table
 CREATE TABLE Appointment (
-    appointment_id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     patient_id INT NOT NULL,
     doctor_id INT NOT NULL,
     date DATE NOT NULL,
