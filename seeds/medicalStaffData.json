@@ -5,9 +5,8 @@
         "gender":"Female",
         "phone_number":"6784582345",
         "role":"Doctor",
-        "specialist_id":1,
-        "email": "bjohnson@med.com",
-        "password": "password"
+        "specialist_id":1
+        
     },
     {
         "first_name":"Glen",
@@ -15,9 +14,8 @@
         "gender":"Male",
         "phone_number":"7708936721",
         "role":"Doctor",
-        "specialist_id":2,
-        "email": "gjames@med.com",
-        "password": "password"
+        "specialist_id":2
+        
 
     },
     {
@@ -26,9 +24,8 @@
         "gender":"Male",
         "phone_number":"4042341213",
         "role":"Doctor",
-        "specialist_id":3,
-        "email": "ppham@med.com",
-        "password": "password"
+        "specialist_id":3
+        
     },
     {
         "first_name":"Jasmine",
@@ -36,9 +33,7 @@
         "gender":"Female",
         "phone_number":"7703751810",
         "role":"Doctor",
-        "specialist_id":4,
-        "email": "jbrown@med.com",
-        "password": "password"
+        "specialist_id":4
     },
     {
         "first_name":"Tom",
@@ -46,9 +41,7 @@
         "gender":"Male",
         "phone_number":"7709086534",
         "role":"Doctor",
-        "specialist_id":5,
-        "email": "tnite@med.com",
-        "password": "password"
+        "specialist_id":5
     },
     {
         "first_name":"Pearl",
@@ -56,9 +49,7 @@
         "gender":"Female",
         "phone_number":"6785112634",
         "role":"Doctor",
-        "specialist_id":6,
-        "email": "pwhite@med.com",
-        "password": "password"
+        "specialist_id":6
     }
 ]
 
