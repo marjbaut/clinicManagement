@@ -1,0 +1,54 @@
+[
+    {
+        "first_name":"Becky",
+        "last_name":"Johnson",
+        "gender":"Female",
+        "phone_number":"6784582345",
+        "role":"Doctor",
+        "specialty_id":1
+    },
+    {
+        "first_name":"Glen",
+        "last_name":"James",
+        "gender":"Male",
+        "phone_number":"7708936721",
+        "role":"Doctor",
+        "specialty_id":2
+    },
+    {
+        "first_name":"Peter",
+        "last_name":"Pham",
+        "gender":"Male",
+        "phone_number":"4042341213",
+        "role":"Doctor",
+        "specialty_id":3
+    },
+    {
+        "first_name":"Jasmine",
+        "last_name":"Brown",
+        "gender":"Female",
+        "phone_number":"7703751810",
+        "role":"Doctor",
+        "specialty_id":4
+    },
+    {
+        "first_name":"Tom",
+        "last_name":"Nite",
+        "gender":"Male",
+        "phone_number":"7709086534",
+        "role":"Doctor",
+        "specialty_id":5
+    },
+    {
+        "first_name":"Pearl",
+        "last_name":"White",
+        "gender":"Female",
+        "phone_number":"6785112634",
+        "role":"Doctor",
+        "specialty_id":6
+    }
+]
+
+
+
+
