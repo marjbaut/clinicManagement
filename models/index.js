@@ -20,12 +20,12 @@ Patient.hasOne(Appointment,{
   })
   // Each MedicalStaff has one Specialty
   MedicalStaff.hasOne(Specialty, {
-    foreignKey:'specialty_id'
+    foreignKey:'specialist_id'
   })
   // One Specialty belongs to one MedicalStaff
-  Specialty.belongsTo(MedicalStaff, {
-    foreignKey: 'specialty_id'
-  })
+  // Specialty.belongsTo(MedicalStaff, {
+  //   foreignKey: 'specialist_id'
+  // })
   MedicalStaff.hasOne(Appointment,{
     foreignKey: 'doctor_id'
   })
