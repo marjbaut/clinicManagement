@@ -1,5 +1,4 @@
 const router = require('express').Router();
-
 // Import patient model
 const { Patient } = require('../models/Patient');
 
