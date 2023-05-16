@@ -52,11 +52,19 @@ Patient.init(
             isEmail: true,
           },
         },
+
     medical_notes: {
         type: DataTypes.TEXT,
          allowNull: true,
         },
-
+    doctor_id: {
+        type: DataTypes.INT,
+        allowNull: false,
+        references: {
+            model: 'medicalStaff',
+            user: 'id',
+            },
+        },
 },
 
 {
