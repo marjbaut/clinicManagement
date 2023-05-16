@@ -15,6 +15,7 @@ const seedDatabase = async () => {
     }
 
     for (const medicalStaff of medicalStaffData) {
+        console.log(medicalStaff)
       await MedicalStaff.create({ ...medicalStaff });
     }
 
