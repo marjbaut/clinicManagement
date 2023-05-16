@@ -1,0 +1,20 @@
+[
+    {
+        "patient_id":1,
+        "doctor_id":1,
+        "date":,
+        "time":,
+        "appointment_type":,
+        "notes": 
+    },
+    {
+        "patient_id":4,
+        "doctor_id":4,
+        "date":,
+        "time":,
+        "appointment_type":,
+        "notes": 
+    }
+]
+
+
