@@ -2,7 +2,8 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Patient extends Model { }
-
+// console.log(Patient);
+console.log('Seeding data...Im in patient.js');
 Patient.init(
 {
     id: {
@@ -55,22 +56,9 @@ Patient.init(
         type: DataTypes.TEXT,
          allowNull: true,
         },
-    primary_doctorId: {
-        type: DataTypes.INTEGER,
-        allowNull: false, 
-        references: {
-            model: 'medicalStaff',
-            user: 'id',
-            },
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-              len: [8],
-            },
-          },
+
 },
+
 {
     sequelize,
     timestamps: false,
@@ -78,6 +66,7 @@ Patient.init(
     underscored: true,
     modelName: 'patient',
   }
+  
 );
 
 module.exports = Patient;
