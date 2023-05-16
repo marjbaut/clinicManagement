@@ -14,16 +14,16 @@ id: {
 patient_id: {
     type: DataTypes.INT,
     allowNull: false,
-    references:{
-        model:'patient',
+    references: {
+        model: 'patient',
         user: 'id',
         },
     },
-doctor_id:{
+doctor_id: {
     type: DataTypes.INT,
     allowNull: false,
-    references:{
-        model:'medicalStaff',
+    references: {
+        model: 'medicalStaff',
         user: 'id',
         },
     },
