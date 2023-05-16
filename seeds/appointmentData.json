@@ -2,18 +2,18 @@
     {
         "patient_id":1,
         "doctor_id":1,
-        "date":,
-        "time":,
-        "appointment_type":,
-        "notes": 
+        "date":"2023-06-04" ,
+        "time":"08:45:0" ,
+        "appointment_type":" Post-op Follow up ",
+        "notes": "no notes"
     },
     {
         "patient_id":4,
         "doctor_id":4,
-        "date":,
-        "time":,
-        "appointment_type":,
-        "notes": 
+        "date":"2023-05-28",
+        "time":"08:30:0",
+        "appointment_type":" Pre-op Follow up ",
+        "notes": "no notes"
     }
 ]
 
