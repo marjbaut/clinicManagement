@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 // const exphbs = require('express-handlebars');
-const routes = require('./controllers');
+const controllers = require('./controllers');
 
 const sequelize = require('./config/connection');
 
@@ -20,9 +20,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(routes);
+app.use(controllers);
 
+//connecting to the database then running the server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Sever is up'));
+  app.listen(PORT, () => console.log('Server is up'));
 });
-//fhcdsy
