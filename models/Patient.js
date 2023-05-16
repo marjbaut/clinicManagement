@@ -57,7 +57,7 @@ Patient.init(
         type: DataTypes.TEXT,
          allowNull: true,
         },
-    doctor_id: {
+    primary_doctorId: {
         type: DataTypes.INT,
         allowNull: false,
         references: {
