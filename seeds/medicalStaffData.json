@@ -6,7 +6,8 @@
         "phone_number":"6784582345",
         "role":"Doctor",
         "specialty_id":1,
-        "email": "bjohnson@med.com"
+        "email": "bjohnson@med.com",
+        "password": "password"
     },
     {
         "first_name":"Glen",
@@ -15,7 +16,8 @@
         "phone_number":"7708936721",
         "role":"Doctor",
         "specialty_id":2,
-        "email": "gjames@med.com"
+        "email": "gjames@med.com",
+        "password": "password"
     },
     {
         "first_name":"Peter",
@@ -24,7 +26,8 @@
         "phone_number":"4042341213",
         "role":"Doctor",
         "specialty_id":3,
-        "email": "ppham@med.com"
+        "email": "ppham@med.com",
+        "password": "password"
     },
     {
         "first_name":"Jasmine",
@@ -33,7 +36,8 @@
         "phone_number":"7703751810",
         "role":"Doctor",
         "specialty_id":4,
-        "email": "jbrown@med.com"
+        "email": "jbrown@med.com",
+        "password": "password"
     },
     {
         "first_name":"Tom",
@@ -42,7 +46,8 @@
         "phone_number":"7709086534",
         "role":"Doctor",
         "specialty_id":5,
-        "email": "tnite@med.com"
+        "email": "tnite@med.com",
+        "password": "password"
     },
     {
         "first_name":"Pearl",
@@ -51,7 +56,8 @@
         "phone_number":"6785112634",
         "role":"Doctor",
         "specialty_id":6,
-        "email": "pwhite@med.com"
+        "email": "pwhite@med.com",
+        "password": "password"
     }
 ]
 
