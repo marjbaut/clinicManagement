@@ -3,21 +3,20 @@ const Specialty = require('./Specialty');
 const Appointment = require('./Appointment');
 const MedicalStaff = require('./MedicalStaff');
 
-  // Patient has one Appointment
-  Patient.hasOne(Appointment, {
-    foreignKey: 'appointment_id'
-  })
+Patient.hasOne(Appointment,{
+  foreignKey:'patient_id'
+})
   // One Appointment belongs to one Patient
   Appointment.belongsTo(Patient, {
     foreignKey: 'patient_id'
   })
   // MedicalStaff has many Patient(s)
   MedicalStaff.hasMany(Patient, {
-    foreignKey: 'patient_id'
+    foreignKey: 'primary_doctorId'
   })
   // Patient belongs to one MedicalStaff
   Patient.belongsTo(MedicalStaff, {
-    foreignKey: 'medicalStaff_id'
+    foreignKey: 'primary_doctorId'
   })
   // Each MedicalStaff has one Specialty
   MedicalStaff.hasOne(Specialty, {
@@ -25,7 +24,13 @@ const MedicalStaff = require('./MedicalStaff');
   })
   // One Specialty belongs to one MedicalStaff
   Specialty.belongsTo(MedicalStaff, {
-    foreignKey: 'medicalStaff_id'
+    foreignKey: 'specialty_id'
+  })
+  MedicalStaff.hasOne(Appointment,{
+    foreignKey: 'doctor_id'
+  })
+  Appointment.belongsTo(MedicalStaff,{
+    foreignKey: 'doctor_id'
   })
 
 
