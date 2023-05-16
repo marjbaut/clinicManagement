@@ -31,10 +31,6 @@ date:{
     type:DataTypes.DATE,
     allowNull: false,
     },
-time:{
-    type:DataTypes.TIME,
-    allowNull: false,
-    },
 appointment_type:{
     type: DataTypes.STRING,
     allowNull: false,
