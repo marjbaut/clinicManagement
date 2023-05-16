@@ -3,6 +3,9 @@ const router = require('express').Router();
 // Import patient model
 const { Patient } = require('../models/Patient');
 
+router.get('/', (req, res)=> {
+  res.render('index', {layout:'main'});
+})
 // GET all patients
 router.get('/', async (req, res) => {
   try {
