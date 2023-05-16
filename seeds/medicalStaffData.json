@@ -5,7 +5,8 @@
         "gender":"Female",
         "phone_number":"6784582345",
         "role":"Doctor",
-        "specialty_id":1
+        "specialty_id":1,
+        "email": "bjohnson@med.com"
     },
     {
         "first_name":"Glen",
@@ -13,7 +14,8 @@
         "gender":"Male",
         "phone_number":"7708936721",
         "role":"Doctor",
-        "specialty_id":2
+        "specialty_id":2,
+        "email": "gjames@med.com"
     },
     {
         "first_name":"Peter",
@@ -21,7 +23,8 @@
         "gender":"Male",
         "phone_number":"4042341213",
         "role":"Doctor",
-        "specialty_id":3
+        "specialty_id":3,
+        "email": "ppham@med.com"
     },
     {
         "first_name":"Jasmine",
@@ -29,7 +32,8 @@
         "gender":"Female",
         "phone_number":"7703751810",
         "role":"Doctor",
-        "specialty_id":4
+        "specialty_id":4,
+        "email": "jbrown@med.com"
     },
     {
         "first_name":"Tom",
@@ -37,7 +41,8 @@
         "gender":"Male",
         "phone_number":"7709086534",
         "role":"Doctor",
-        "specialty_id":5
+        "specialty_id":5,
+        "email": "tnite@med.com"
     },
     {
         "first_name":"Pearl",
@@ -45,7 +50,8 @@
         "gender":"Female",
         "phone_number":"6785112634",
         "role":"Doctor",
-        "specialty_id":6
+        "specialty_id":6,
+        "email": "pwhite@med.com"
     }
 ]
 
