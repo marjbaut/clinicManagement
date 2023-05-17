@@ -2,11 +2,11 @@
   <div class="row align-items-start">
 
     <div class="col list">
-    <p class="listTitle">Patient List by ID #</p>
+    <h1 class="listTitle">Patient List by ID #</h1>
     {{#each patientmap as |content|}}
     <ol>
     <div class="listChart">
-    <button class="patientId"> {{content.id}}</button> 
+    <a href="/patientList/{{id}}"><button class="patientId"> {{content.id}}</button></a>
     <p class="names"> {{content.first_name}} {{last_name}}</p>
     </div>
     </ol>

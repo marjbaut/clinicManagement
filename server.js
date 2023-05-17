@@ -2,13 +2,13 @@ const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
 const controllers = require('./controllers');
-const authRoutes = require('./controllers/users/authRoutes')
+const authRoutes = require('./controllers/index')
 
 
 const sequelize = require('./config/connection');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3005;
 // MBadded
 const models=require("./models")
 
@@ -31,4 +31,5 @@ app.use(controllers);
 sequelize.sync({ force: false }).then(() => {
 
   app.listen(PORT, () => console.log('Server is up'));
+
 });

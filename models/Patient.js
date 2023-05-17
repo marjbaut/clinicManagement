@@ -25,7 +25,7 @@ Patient.init(
         allowNull: false,
         },
     date_of_birth: {
-        type:DataTypes.DATE,
+        type:DataTypes.DATEONLY,
         allowNull: false,
     },
     gender: {
