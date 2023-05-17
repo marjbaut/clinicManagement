@@ -10,7 +10,42 @@
     margin-top:10%;
 }
 
+
+div.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+div.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+input.btn.btn-primary {
+    margin:auto 240px;
+}
+
+button.btn.btn-primary {
+    margin-top: 2rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 main {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -22,6 +57,7 @@ h2 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin: 0 auto;
     font-size: 3rem;
     padding-bottom: 2rem;
@@ -29,30 +65,14 @@ h2 {
 
 
 .card-body {
-    margin-top: 2rem;
-    width: 50%;
-    margin-left: 5rem;
-    padding-left: 3rem;
+    display: flex;
+    flex-direction: column;
     border: 2px solid black;
     border-radius: 1rem;
 }
 
-.col-md-6 {
-    display: flex;
-    padding-left: 10rem;
-}
-
-.col-md-7 {
-    margin-bottom: 10rem;
-}
-
-.container .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .addPatient {
+    width: 100%;
     align-items: center;
     border: 2px solid black;
     border-radius: 1rem;
