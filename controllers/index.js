@@ -12,5 +12,8 @@ const patientList = require('./patientList');
 router.use('/patientList', patientList);
 
 //mb-------
+router.get('/',(req,res)=>{
+  res.render('index',{layout:'main'});
 
+})
 module.exports = router;
