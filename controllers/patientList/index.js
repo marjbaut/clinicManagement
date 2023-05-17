@@ -24,5 +24,5 @@ router.get('/:patient_id', async(req,res)=> {
     res.render('patientChart',nicePatientData);
 });
 
-
+  
 module.exports = router;
