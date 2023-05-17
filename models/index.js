@@ -25,6 +25,7 @@ MedicalStaff.hasOne(Specialty, {
   foreignKey: 'specialist_id'
 })
 
+
 MedicalStaff.hasOne(Appointment, {
   foreignKey: 'doctor_id'
 })
