@@ -7,7 +7,8 @@ const sequelize = require('./config/connection');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+// MBadded
+const models=require("./models")
 
 const hbs = exphbs.create({ });
 
