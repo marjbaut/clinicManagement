@@ -1,84 +1,58 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
+const User = require('./User');
 class MedicalStaff extends Model { }
 const bcrypt = require('bcrypt');
 
 MedicalStaff.init(
-    {
+  {
     id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-        },
-    first_name:{
-        type: DataTypes.STRING,
-        allowNull: false,
-         },
-    last_name:{
-        type: DataTypes.STRING,
-        allowNull: false,
-        },
-    gender:{
-        type: DataTypes.STRING,
-        allowNull: false,
-        },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-        validate: {
-        isEmail: true,
-      },
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    password: {
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    phone_number: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8],
+        len: [10],
       },
     },
-    phone_number:{
-        type: DataTypes.STRING,
-        allowNull:false,
-        validate: {
-            len: [10],
-          },
-        },
-
-    role:{
-        type: DataTypes.STRING,
-         allowNull: false,
-        },
-    specialist_id:{
-        type: DataTypes.INTEGER,
-        allowNull: false, 
-        references:{
-            model:'specialty',
-            user: 'id',
-            },
-        },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    {
-        hooks: {
-          beforeCreate: async (newUserData) => {
-            newUserData.password = await bcrypt.hash(newUserData.password, 10);
-            return newUserData;
-          },
-          beforeUpdate: async (updatedUserData) => {
-            if (updatedUserData.password) {
-            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-            }
-            return updatedUserData;
-          },
-        },
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'medicalStaff',
-      }
+    specialist_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'specialty',
+        key: 'id',  // <-- should be 'key', not 'user'
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'medicalstaff',
+  }
 );
+
+MedicalStaff.belongsTo(User, { foreignKey: 'userId' });
 
 module.exports = MedicalStaff;
