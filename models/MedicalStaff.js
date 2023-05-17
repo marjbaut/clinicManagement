@@ -2,7 +2,8 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const User = require('./User');
 class MedicalStaff extends Model { }
-const bcrypt = require('bcrypt');
+
+
 
 MedicalStaff.init(
   {
@@ -37,7 +38,8 @@ MedicalStaff.init(
     },
     specialist_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: 1,
       references: {
         model: 'specialty',
         key: 'id',  // <-- should be 'key', not 'user'
@@ -53,6 +55,9 @@ MedicalStaff.init(
   }
 );
 
-MedicalStaff.belongsTo(User, { foreignKey: 'userId' });
+
+// MedicalStaff.associate = (models) => {
+//   MedicalStaff.hasOne(models.User);
+// };
 
 module.exports = MedicalStaff;
