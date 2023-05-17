@@ -11,11 +11,11 @@ Patient.init(
         primaryKey: true,
         autoIncrement: true,
         },
-    mrn: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        unique: true,
-        },       
+    // mrn: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: false,
+    //     unique: true,
+    //     },       
     first_name: {
         type: DataTypes.STRING,
         allowNull: false,

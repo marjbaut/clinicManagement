@@ -1,4 +1,10 @@
 const router = require('express').Router();
+const authController = require('./users/authController')
+
+
+router.get('/', (req, res)=> {
+  res.render('index', {layout:'main'});
+})
 
 //bs added------
 const doctor = require('./doctor');
@@ -12,6 +18,13 @@ const patientList = require('./patientList');
 router.use('/patientList', patientList);
 
 //mb-------
+
+
+
+router.get('/signup', authController.signup_get);
+router.post('/signup', authController.signup_post);
+router.get('/login', authController.login_get);
+router.post('/login', authController.login_post);
 router.get('/',(req,res)=>{
   res.render('index',{layout:'main'});
 
@@ -29,10 +42,9 @@ module.exports = router;
 //   }
 // });
 
-// router.get('/', (req, res)=> {
-//   res.render('index', {layout:'main'});
-// })
-// // GET all patients
+
+
+// GET all patients
 // router.get('/', async (req, res) => {
 //   try {
 //     const patientsData = await Patient.findAll();
@@ -43,65 +55,10 @@ module.exports = router;
 //   }
 // });
 
-// GET one patient by id
-// router.get('/:id', async (req, res) => {
-//   try {
-//     const patientData = await Patient.findByPk(req.params.id);
-//     if (!patientData) {
-//       res.status(404).json({ message: 'No patient found with this id' });
-//       return;
-//     }
-//     const patient = patientData.get({ plain: true });
-//     res.render('patient', { patient });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+router.get('/', (req, res)=> {
+  res.render('index', {layout:'main'});
+})
 
-// POST create new patient
-// router.post('/', async (req, res) => {
-//   try {
-//     const patientData = await Patient.create(req.body);
-//     res.status(201).json(patientData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
-// // PUT update patient by id
-// router.put('/:id', async (req, res) => {
-//   try {
-//     const patientData = await Patient.update(req.body, {
-//       where: {
-//         id: req.params.id,
-//       },
-//     });
-//     if (!patientData[0]) {
-//       res.status(404).json({ message: 'No patient found with this id' });
-//       return;
-//     }
-//     res.status(200).json(patientData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-// DELETE patient by id
-// router.delete('/:id', async (req, res) => {
-//   try {
-//     const patientData = await Patient.destroy({
-//       where: {
-//         id: req.params.id,
-//       },
-//     });
-//     if (!patientData) {
-//       res.status(404).json({ message: 'No patient found with this id' });
-//       return;
-//     }
-//     res.status(200).json(patientData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 

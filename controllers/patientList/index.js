@@ -2,13 +2,15 @@ const router = require("express").Router();
 const {Patient, MedicalStaff, Appointment, Specialty} = require ('../../models');
 //localhost:3001/patientList
 router.get('/', async (req, res) => {
-
+  try {
   const patientData = await Patient.findAll();
-  // const nicePatientData = patientData.get({plain: true});
-  console.log(' data', patientData);
-  // 
-    res.render('patient',patientData);
-
+  const patientmap = patientData.map((content)=> content.get({plain: true}))
+  // const cleanPatientData = patientData.get({plain: true});
+  console.log('data', patientmap);
+  res.render('patientList', {patientmap});
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
   //localhost:3001/patientList/:patient_id

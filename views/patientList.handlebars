@@ -1,0 +1,17 @@
+<div class="container text-center">
+  <div class="row align-items-start">
+
+    <div class="col list">
+    <p class="listTitle">Patient List by ID #</p>
+    {{#each patientmap as |content|}}
+    <ol>
+    <div class="listChart">
+    <button class="patientId"> {{content.id}}</button> 
+    <p class="names"> {{content.first_name}} {{last_name}}</p>
+    </div>
+    </ol>
+    {{/each}}
+    </div>
+  
+  </div>
+</div>
