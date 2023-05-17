@@ -11,16 +11,14 @@ router.get('/', async (req, res) => {
 
 });
 
-
   //localhost:3001/patientList/:patient_id
 router.get('/:patient_id', async(req,res)=> {
 
     const patientData = await Patient.findByPk(req.params.patient_id, {
         include:[{model : MedicalStaff}
-        ,{model: Appointment},
+        // ,{model: Appointment , through:MedicalStaff, as: 'Dr appointment'},
         ]
     });
-
     const nicePatientData = patientData.get({plain: true});
     console.log('nice data', nicePatientData);
     res.render('patientChart',nicePatientData);
