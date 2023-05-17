@@ -14,7 +14,6 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-bottom: 5rem;
     padding-top: 2rem;
 }
 
@@ -28,16 +27,12 @@ h2 {
     padding-bottom: 2rem;
 }
 
-.card mb-3 {
-    padding-left: 2rem;
-}
 
-.col-md-4 {
-    border: 2px solid black;
-    border-radius: 1rem;
-}
-
-.col-md-8 {
+.card-body {
+    margin-top: 2rem;
+    width: 50%;
+    margin-left: 5rem;
+    padding-left: 3rem;
     border: 2px solid black;
     border-radius: 1rem;
 }
@@ -45,6 +40,10 @@ h2 {
 .col-md-6 {
     display: flex;
     padding-left: 10rem;
+}
+
+.col-md-7 {
+    margin-bottom: 10rem;
 }
 
 .container .row {
@@ -60,8 +59,31 @@ h2 {
     padding: 5%;
 }
 
-.container .btn.btn-primary {
-    height: 20rem;
+.listTitle{
+    margin-right: 40%;
+    font-weight: 20px;
+    color: blue;
+  }
+  
+  .list{
+    margin-left: 40%;
+  }
+  
+  .patientId {
     border: 2px solid black;
-    border-radius: 1rem;
-}
+    margin-right: 20px;
+    margin-top: 5px;
+    background-color: lightblue;
+  }
+  
+  .listChart {
+    margin-top: 30px;
+    border: 2px solid black;
+    width: 300px;
+  }
+  
+  .names{
+    display: inline-flex;
+    margin-left: 5px;
+  }
+
