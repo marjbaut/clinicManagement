@@ -1,10 +1,10 @@
 const router = require('express').Router();
 
-// //bs added------
-// const doctor = require('./doctor');
-// //localhost:3001/doctor
-// router.use('/doctor', doctor);
-// //bs added------
+//bs added------
+const doctor = require('./doctor');
+//localhost:3001/doctor
+router.use('/doctor', doctor);
+//bs added------
 
 // mb added------
 const patientList = require('./patientList');
@@ -14,8 +14,6 @@ router.use('/patientList', patientList);
 //mb-------
 
 
-// Import patient model
-// const { Patient } = require('../models/Patient');
 
 
 
