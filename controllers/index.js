@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 
+
 // mb added------
 const patientList = require('./patientList');
 //  localhost:3001/patients
@@ -11,6 +12,22 @@ router.use('/patientList', patientList);
 
 // Import patient model
 // const { Patient } = require('../models/Patient');
+
+
+
+router.get('/', (req, res)=> {
+  res.render('index', {layout:'main'});
+})
+// GET all patients
+router.get('/', async (req, res) => {
+  try {
+    const patientsData = await Patient.findAll();
+    const patients = patientsData.map(patient => patient.get({ plain: true }));
+    res.render('patients', { patients });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // router.get('/', (req, res)=> {
 //   res.render('index', {layout:'main'});
