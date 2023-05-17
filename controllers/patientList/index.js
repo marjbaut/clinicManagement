@@ -17,14 +17,15 @@ router.get('/', async (req, res) => {
 router.get('/:patient_id', async(req,res)=> {
 
     const patientData = await Patient.findByPk(req.params.patient_id, {
-        include:[{model : MedicalStaff}
-        // ,{model: Appointment , through:MedicalStaff, as: 'Dr appointment'},
-        ]
+        include:[{model : MedicalStaff},{model: Appointment}]
     });
     const nicePatientData = patientData.get({plain: true});
     console.log('nice data', nicePatientData);
     res.render('patientChart',nicePatientData);
 });
+router.get('/:patient_id', async(req,res)=>{
+
+})
 
   
 module.exports = router;

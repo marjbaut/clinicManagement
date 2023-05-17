@@ -8,7 +8,7 @@ const authRoutes = require('./controllers/index')
 const sequelize = require('./config/connection');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3005;
 // MBadded
 const models=require("./models")
 

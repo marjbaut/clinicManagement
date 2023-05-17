@@ -1,44 +1,61 @@
-<div class="container text-center">
-  <div class="row justify-content cente">
-{{!-- DOCTOR COLUMN --}}
-    <div class="col-4 border" >
-
-      <h2>{{medicalStaff.role}}:</h2> 
-      <h2>{{medicalStaff.first_name}}  {{ medicalStaff.last_name }}</h2>
-      <h2>Contact Information:</h2>
-      <h3> Phone Number: {{medicalStaff.phone_number}} </h3>
-      <h3>Email: {{medicalStaff.email}}</h3>
+<div class="container ">
+  <div class="row justify-content center">
+    {{!-- DOCTOR COLUMN --}}
+    <div class="col-4 border">
+      <div class="row border">
+        <h3>{{medicalstaff.role}} information</h3>
+      </div>
+      {{!-- DOCTOR INFO --}}
+      <div class="row border">
+        <h1>{{medicalstaff.first_name}} {{ medicalstaff.last_name }}<h1>
+            <h2>Contact Information:</h2>
+            <ul>
+              <h4>Doctor's ID: {{medicalstaff.id}}</h4>
+              <h4>Gender: {{gender}}</h4>
+              <h4>Phone Number: {{medicalstaff.phone_number}} </h4>
+            </ul>
+      </div>
     </div>
-{{!-- PATIENT COLUMN --}}
+    {{!-- PATIENT COLUMN --}}
     <div class="col-4 border">
       {{!-- PATIENT NAME --}}
       <div class="row border">
-        <h3>Patient:{{last_name}}, {{first_name}}</h3>
+        <h3>Patient information</h3>
       </div>
       {{!-- PATIENT INFO --}}
       <div class="row border">
-        <h3>Patient information: </h3>
-        <ul>
-          <li>MRN: {{mrn}}</li>
-          <li>Gender: {{gender}}</li>
-          <li>DOB: {{date_of_birth}}</li>
-          <li>Email: {{email}}</li>
-          <li>Phone Number: {{phone_number}}</li>
-          <li>Address: {{address}}</li>
-        </ul>
-
+        <h1>{{last_name}}, {{first_name}} <h1>
+            <ul>
+              <h4>Gender: {{gender}}</h4>
+              <h4>DOB: {{date_of_birth}}</h4>
+              <h4>Email: {{email}}</h4>
+              <h4>Phone Number: {{phone_number}}</h4>
+              <h4>Address: {{address}}</h4>
+            </ul>
       </div>
     </div>
-{{!--DOCTOR'S NOTE  --}}
+    {{!--DOCTOR'S NOTE --}}
     <div class="col-4 border">
       <div class="row">
-        <h1>Notes:</h1>
+        <ul>
+          <h3>Next appointment is on: </h3>
+          <li>{{appointment.date}}</li>
+          <h3>Reason for the appointment:</h3>
+          <li>{{appointment.appointment_type}}:</li>
+        </ul>
       </div>
       <div class="row">
-        
+        <ul>
+          <h3>Patient History:</h3>
+          <li>{{appointment.notes}} </li>
+        </ul>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Add note to patient history:</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
       </div>
 
     </div>
+    
   </div>
 </div>
-       

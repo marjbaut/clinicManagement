@@ -2,6 +2,9 @@ const router = require('express').Router();
 const { MedicalStaff } = require("../../models");
 
 
+// router.get('/doctor', (req, res) => {
+//     res.render('doctor');
+// });
 
 
 // localhost:3001

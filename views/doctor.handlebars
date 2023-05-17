@@ -95,3 +95,78 @@
     </div>
   </div>
 </main>
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="..." class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Good Morning!</h5>
+        Name,<p>{{last_name}}{{first_name}}</p>
+        Gender<p>{{gender}}</p>
+        Email<p>{{email}}</p>
+        Phone Number<p>{{phone_number}}</p>
+        Role<p>{{role}}</p>
+        Specialty<p>{{specialist_id}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<main class="container">
+  <div class="row">
+    <button type="button" class="btn btn-primary btn-lg col-md-3">Large button</button>
+      <div class="col-md-7">
+        <form class="addPatient">
+
+         <div class="input-group mb-3">
+            <span class="input-group-text">First and last name</span>
+            <input type="text" aria-label="First name" class="form-control">
+            <input type="text" aria-label="Last name" class="form-control">
+          </div>
+
+          
+
+          <select class="form-select mb-3" aria-label="Default select example">
+            <option selected>Gender Choice</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+            <option value="3">Other</option>
+          </select>
+
+          <div class="">
+            <label for="inputAddress" class="form-label">Address</label>
+            <input type="text" class="form-control mb-3" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="">
+            <label for="inputAddress2" class="form-label mb-3">Address 2</label>
+            <input type="text" class="form-control mb-3" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          </div>
+          <div class="">
+            <label for="inputCity" class="form-label">City</label>
+            <input type="text" class="form-control mb-3" id="inputCity">
+          </div>
+          <div class="">
+            <label for="inputState" class="form-label">State</label>
+            <select id="inputState" class="form-select mb-3">
+            <option selected>Choose...</option>
+            <option>...</option>
+          </select>
+          </div>
+          <div class="mb-3">
+            <label for="inputZip" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="inputZip">
+          </div>
+
+          <div class="input group mb-3">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4">
+          </div>
+
+      </form>
+    </div>
+  </div>
+</main>
