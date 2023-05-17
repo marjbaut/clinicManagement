@@ -1,11 +1,13 @@
 const router = require('express').Router();
 
+
 // mb added------
 const patientList = require('./patientList');
 //  localhost:3001/patients
 router.use('/patientList', patientList);
 
 //mb-------
+
 
 // Import patient model
 // const { Patient } = require('../models/Patient');
