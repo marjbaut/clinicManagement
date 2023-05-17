@@ -1,4 +1,10 @@
 const router = require('express').Router();
+const authController = require('./users/authController')
+
+
+router.get('/', (req, res)=> {
+  res.render('index', {layout:'main'});
+})
 
 //bs added------
 const doctor = require('./doctor');
@@ -15,11 +21,14 @@ router.use('/patientList', patientList);
 
 
 
+router.get('/signup', authController.signup_get);
+router.post('/signup', authController.signup_post);
+router.get('/login', authController.login_get);
+router.post('/login', authController.login_post);
 
 
-router.get('/', (req, res)=> {
-  res.render('index', {layout:'main'});
-})
+
+
 // GET all patients
 // router.get('/', async (req, res) => {
 //   try {

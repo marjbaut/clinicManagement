@@ -1,6 +1,6 @@
-const User = require('../models/User')
-const MedicalStaff = require('../models/MedicalStaff')
-const login = require('../controllers/users/login');
+const User = require('../../models/User')
+const MedicalStaff = require('../../models/MedicalStaff')
+const login = require('./login');
 
 
 module.exports.signup_get = (req, res) => {
@@ -27,18 +27,16 @@ const redirect = () => {
 
 exports.login_post = async (req, res) => {
     const { email, password } = req.body;
-
+    
     try {
-        const user = await login(email, password);
-        const prettyUserData =  user.get({plain: true});
-
-        console.log(prettyUserData);
-        res.send(prettyUserData);
-        // return res.redirect('/doctor')
-
+      const isAuthenticated = await login(email, password);
+      if (isAuthenticated) {
+        redirect(res, '/doctor');
+      } else {
+        throw new Error('Authentication failed');
+      }
     } catch (error) {
-        res.status(400).json({ message: error.message });
+      res.status(400).json({ message: error.message });
     }
-};
-
+  };
 

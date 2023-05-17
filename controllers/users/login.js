@@ -2,17 +2,11 @@ const bcrypt = require('bcrypt');
 const User = require('../../models/User');
 
 const login = async (email, password) => {
-  const foundUser = await User.findOne({ where: {email: email }
-    
-
-})
+  const foundUser = await User.findOne({ where: {email: email }});
   if (foundUser) {
     const auth = await bcrypt.compare(password, foundUser.password);
     if (auth) {
-        console.log("user found, need to return login")
-        // res.redirect('/doctor')
-      return foundUser;
-
+      return true;
     } else {
       throw new Error('Incorrect password');
     }
