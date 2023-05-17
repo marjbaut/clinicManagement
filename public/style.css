@@ -66,30 +66,4 @@ h2 {
     border-radius: 1rem;
 }
 
-.listTitle{
-    margin-right: 40%;
-    font-weight: 20px;
-    color: blue;
-}
 
-.list{
-    margin-left: 40%;
-}
-
-.patientId {
-    border: 2px solid black;
-    margin-right: 20px;
-    margin-top: 5px;
-    background-color: lightblue;
-  }
-  
-.listChart {
-    margin-top: 30px;
-    border: 2px solid black;
-    width: 300px;
-  }
-  
-.names{
-    display: inline-flex;
-    margin-left: 5px;
-  }
