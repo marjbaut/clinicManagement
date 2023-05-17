@@ -2,7 +2,6 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Patient extends Model { }
-// console.log(Patient);
 console.log('Seeding data...Im in patient.js');
 Patient.init(
 {
