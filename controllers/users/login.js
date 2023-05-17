@@ -1,18 +1,20 @@
 const bcrypt = require('bcrypt');
 const User = require('../../models/User');
 
-const login = async (email, password) => {
-  const user = await User.findOne({email});
-  if (email) {
-    console.log(user instanceof User);
-    console.log(user + "exists, moving down...")
-    const auth = await bcrypt.compare(password, user.password);
-    if (auth) {
-      return user;
+const login = async (req, res, next) => {
+    const { email, password } = req.body;
+    const foundUser = await User.findOne({ where: { email: email } });
+    if (foundUser) {
+        const auth = await bcrypt.compare(password, foundUser.password);
+        if (auth) {
+            req.session.user = foundUser; // save the user in the session
+            res.redirect('/dashboard'); // redirect the user to the dashboard page
+        } else {
+            throw new Error('Incorrect password');
+        }
+    } else {
+        throw new Error('User not found');
     }
-    throw Error('incorrect password');
-  }
-  throw Error('incorrect email');
 };
 
 module.exports = login;
