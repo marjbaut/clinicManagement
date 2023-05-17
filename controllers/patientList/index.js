@@ -23,9 +23,16 @@ router.get('/:patient_id', async(req,res)=> {
     console.log('nice data', nicePatientData);
     res.render('patientChart',nicePatientData);
 });
-router.get('/:patient_id', async(req,res)=>{
+router.post('/:patient_id', async(req,res)=>{
+  console.log(`${req.method} request received`)
+// const newNote = await Appointment.findByPk({
+//     attributes: [notes]
+// });
 
-})
-
+});
+// router.get('/', (req, res) =>{
+//   let data =  fs.readFileSync('./db/db.json', 'utf8' );
+//   res.json(JSON.parse(data))
+// });
   
 module.exports = router;
