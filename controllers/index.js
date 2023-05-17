@@ -1,7 +1,10 @@
 const router = require('express').Router();
-
+const doctor = require('./doctor');
 // Import patient model
 const { Patient } = require('../models/Patient');
+
+//localhost:3000/doctor
+router.use('/doctor', doctor);
 
 router.get('/', (req, res)=> {
   res.render('index', {layout:'main'});
