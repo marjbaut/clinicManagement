@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
 
     // localhost:3001/doctor
 router.get('/doctor/:doctor_id', async (req, res) => {
-    const userData = await MedicalStaff.findByPk(req.params.user_id, {
+    const userData = await MedicalStaff.findByPk(req.params.doctor_id, {
         attributes: [
             'first_name',
             'last_name',
