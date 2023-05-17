@@ -6,6 +6,7 @@ router.get('/', async (req, res) => {
   const patientData = await Patient.findAll();
   // const nicePatientData = patientData.get({plain: true});
   console.log(' data', patientData);
+  // 
     res.render('patient',patientData);
 
 });
