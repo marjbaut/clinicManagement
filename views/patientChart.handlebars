@@ -1,15 +1,44 @@
 <div class="container text-center">
-  <div class="row align-items-start">
+  <div class="row justify-content cente">
+{{!-- DOCTOR COLUMN --}}
+    <div class="col-4 border" >
 
-    <div class="col">
-      <p>MRN</p>
-      <p> {{mrn}}</p>
+      <h2>{{medicalStaff.role}}:</h2> 
+      <h2>{{medicalStaff.first_name}}  {{ medicalStaff.last_name }}</h2>
+      <h2>Contact Information:</h2>
+      <h3> Phone Number: {{medicalStaff.phone_number}} </h3>
+      <h3>Email: {{medicalStaff.email}}</h3>
     </div>
-    
-    <div class="col">
-      <div>
+{{!-- PATIENT COLUMN --}}
+    <div class="col-4 border">
+      {{!-- PATIENT NAME --}}
+      <div class="row border">
+        <h3>Patient:{{last_name}}, {{first_name}}</h3>
+      </div>
+      {{!-- PATIENT INFO --}}
+      <div class="row border">
+        <h3>Patient information: </h3>
+        <ul>
+          <li>MRN: {{mrn}}</li>
+          <li>Gender: {{gender}}</li>
+          <li>DOB: {{date_of_birth}}</li>
+          <li>Email: {{email}}</li>
+          <li>Phone Number: {{phone_number}}</li>
+          <li>Address: {{address}}</li>
+        </ul>
+
+      </div>
+    </div>
+{{!--DOCTOR'S NOTE  --}}
+    <div class="col-4 border">
+      <div class="row">
+        <h1>Notes:</h1>
+      </div>
+      <div class="row">
         
       </div>
+
     </div>
   </div>
 </div>
+       
