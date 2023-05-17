@@ -31,6 +31,8 @@
         headers: { 'Content-Type': 'application/json' }
       });
       const data = await res.json();
+      const doctorUrl = data.id
+      window.location.replace('/doctor/' + doctorUrl);
       console.log(data);
 
     } catch (err) {
