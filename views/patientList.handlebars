@@ -1,0 +1,26 @@
+<div class="container text-center">
+  <div class="row align-items-start">
+
+    <div class="col">
+     <p>Patient ID #</p>
+     {{#each patientmap as |content|}}
+     <p> {{content.id}}</p>
+     {{/each}}
+    </div>
+
+    <div class="col">
+     <p>First Name</p>
+     {{#each patientmap as |content|}}
+     <p> {{content.first_name}}</p>
+     {{/each}}
+    </div>
+
+    <div class="col">
+     <p>Last Name</p>
+     {{#each patientmap as |content|}}
+     <p> {{last_name}}</p>
+     {{/each}}
+    </div>
+   
+  </div>
+</div>
