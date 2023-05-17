@@ -14,8 +14,6 @@ module.exports.signup_post = async (req, res) => {
     try {
         const user = await User.create({ email, password });
         const medicalstaff = await MedicalStaff.create({ first_name, last_name, gender, phone_number, role, UserId: user.id });
-
-        // const medicalstaff = await MedicalStaff.create({first_name, last_name, gender, phone_number, role, email, password});
         res.status(201).json(medicalstaff)
     } catch (err) {
         console.log(err);

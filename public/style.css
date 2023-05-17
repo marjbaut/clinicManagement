@@ -1,4 +1,11 @@
 #signupForm{
     width: 20%;
     margin: auto;
+    
+}
+#doctorPatientButtons{
+   
+    
+    text-align: center;
+    margin-top:10%;
 }
