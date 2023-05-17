@@ -1,1 +1,45 @@
-login
+<div id="signupForm">
+
+
+  <form>
+    <h2>Log in</h2>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<script>
+  const form = document.querySelector('form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = form.email.value;
+    const password = form.password.value;
+
+    try {
+      const res = await fetch('/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+
+        headers: { 'Content-Type': 'application/json' }
+      });
+      const data = await res.json();
+      console.log(data);
+
+    } catch (err) {
+      console.log(err);
+    }
+  });
+  //get the value from the form
+
+  const email = form.email.value;
+  const password = form.password.value;
+  console.log(email, password)
+</script>
