@@ -2,9 +2,6 @@ const router = require('express').Router();
 const { MedicalStaff } = require("../../models");
 
 
-router.get('/doctor', (req, res) => {
-    res.render('doctor');
-});
 
 
 // localhost:3001
@@ -22,14 +19,14 @@ router.get('/', async (req, res) => {
 
     const prettyUserData = userData.map((medicalStaff) => medicalStaff.get({plain: true}));
     console.log("NO STAINS!", prettyUserData);
-    res.render('doctor', {prettyUserData});
+    res.render('doctor');
 
 
     });
 
     // localhost:3001/doctor
-router.get('/doctor/:doctor_id', async (req, res) => {
-    const userData = await MedicalStaff.findByPk(req.params.user_id, {
+router.get('/:doctor_id', async (req, res) => {
+    const userData = await MedicalStaff.findByPk(req.params.doctor_id, {
         attributes: [
             'first_name',
             'last_name',

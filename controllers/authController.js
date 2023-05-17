@@ -21,16 +21,24 @@ module.exports.signup_post = async (req, res) => {
     }
 }
 
+const redirect = () => {
+    res.redirect('/doctor')
+}
 
 exports.login_post = async (req, res) => {
     const { email, password } = req.body;
-  
+
     try {
-      const user = await login(email, password);
-      res.status(200).json({ user });
+        const user = await login(email, password);
+        const prettyUserData =  user.get({plain: true});
+
+        console.log(prettyUserData);
+        res.send(prettyUserData);
+        // return res.redirect('/doctor')
+
     } catch (error) {
-      res.status(400).json({ message: error.message });
+        res.status(400).json({ message: error.message });
     }
-  };
+};
 
 

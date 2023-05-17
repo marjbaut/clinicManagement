@@ -36,7 +36,7 @@ User.init(
       allowNull: false,
       defaultValue: 1,
       references: {
-        model: 'medicalstaff',
+        model: 'medicalStaff',
         key: 'id',
       },
     },
