@@ -21,7 +21,7 @@ const formSubmission = async () => {
     console.log(doctorIdValue);
 
 
-    const postValue = await fetch('/patientlist', {
+    const postValue = await fetch('/patientList', {
         method: "POST",
         body: JSON.stringify({
            first_name: firstNameValue,
