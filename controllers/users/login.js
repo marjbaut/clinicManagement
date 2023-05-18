@@ -1,8 +1,8 @@
 const bcrypt = require('bcrypt');
-const User = require('../../models/User');
+const MedicalStaff = require('../../models/MedicalStaff');
 
 const login = async (email, password) => {
-  const foundUser = await User.findOne({ where: {email: email }});
+  const foundUser = await MedicalStaff.findOne({ where: {email: email }});
   if (foundUser) {
     const auth = await bcrypt.compare(password, foundUser.password);
     if (auth) {

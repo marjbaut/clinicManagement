@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
     });
 
     const prettyUserData = userData.map((medicalStaff) => medicalStaff.get({plain: true}));
-    console.log("NO STAINS!", prettyUserData);
+    //console.log("NO STAINS!", prettyUserData);
     res.render('doctor');
 
 

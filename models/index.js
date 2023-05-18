@@ -2,7 +2,6 @@ const Patient = require('./Patient');
 const Specialty = require('./Specialty');
 const Appointment = require('./Appointment');
 const MedicalStaff = require('./MedicalStaff');
-const User = require('./User');
 
 
 Patient.hasOne(Appointment, {
@@ -32,12 +31,11 @@ MedicalStaff.hasOne(Appointment, {
 Appointment.belongsTo(MedicalStaff, {
   foreignKey: 'doctor_id'
 })
-User.belongsTo(MedicalStaff, { foreignKey: 'medical_staff_id' });
+
 
 module.exports = {
   Patient,
   Specialty,
   Appointment,
   MedicalStaff,
-  User
 };
