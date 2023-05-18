@@ -22,8 +22,6 @@ router.get('/:patient_id', async (req, res) => {
   const nicePatientData = patientData.get({ plain: true });
   console.log('nice data', nicePatientData);
   res.render('patientChart', nicePatientData);
-
-
 });
 
 // router.put('/:patient_id', async (req, res) => {
@@ -32,20 +30,29 @@ router.get('/:patient_id', async (req, res) => {
 //   console.log(result);
 // });
 
-router.put('/:patient_id', async (req, res) => {
-  try {
-    const noteData = await Patient.update(req.body,{
-      where: {
-        patient_id: req.params.patient_id
-      }
-    });
-    res.status(200).json(noteData);
-    console.log(noteData);
+// router.put('/:patient_id', async (req, res) => {
+//   try {
+//     const noteData = await Patient.update(req.body,{
+//       where: {
+//         patient_id: req.params.patient_id
+//       }
+//     });
+//     res.status(200).json(noteData);
+//     console.log(noteData);
 
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+
+
+router.post('/', async (req, res) => {
+  try {
+    const newPatient = await Patient.create(req.body);
+    res.status(200).json(newPatient);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
-
-
+  
 module.exports = router;

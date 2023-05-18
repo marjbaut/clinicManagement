@@ -31,30 +31,30 @@
 
 
 
-console.log('hello')
+// console.log('hello')
 
-const noteForm = document.getElementById('noteForm')
+// const noteForm = document.getElementById('noteForm')
 
-const formSubmission = async (e) => {
-    e.preventDefault();
+// const formSubmission = async (e) => {
+//     e.preventDefault();
 
-    const noteValue = document.getElementById('doctorNoteInput').value;
-    console.log(noteValue);
+//     const noteValue = document.getElementById('doctorNoteInput').value;
+//     console.log(noteValue);
 
-    const putValue = await fetch('/patientList/:patient_id', {
-        method: "PUT",
-        body: JSON.stringify({
-            doctorNote: noteValue,
-        }),
-        headers: { 'Content-Type': 'application/json' },
-    })
+//     const putValue = await fetch('/patientList/:patient_id', {
+//         method: "PUT",
+//         body: JSON.stringify({
+//             doctorNote: noteValue,
+//         }),
+//         headers: { 'Content-Type': 'application/json' },
+//     })
 
-    if(putValue.ok) {
-        alert("Your update is up!");
-    } else {
-        alert('Go fix your codeeeee');
-    }
-}
+//     if(putValue.ok) {
+//         alert("Your update is up!");
+//     } else {
+//         alert('Go fix your codeeeee');
+//     }
+// }
 
 
-noteForm.addEventListener('submit', formSubmission);
+// noteForm.addEventListener('submit', formSubmission);
