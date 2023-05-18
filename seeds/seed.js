@@ -8,7 +8,7 @@ const appointmentData = require('./appointmentData.json');
 
 const seedDatabase = async () => {
   try {
-    await sequelize.sync({ force: true });
+    await sequelize.sync({ force: false });
 
     for (const specialty of specialtyData) {
       await Specialty.create({ ...specialty });

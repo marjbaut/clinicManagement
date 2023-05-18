@@ -1,10 +1,18 @@
 const router = require('express').Router();
 const authController = require('./users/authController')
+const session = require('express-session')
 
 
-router.get('/', (req, res)=> {
-  res.render('index', {layout:'main'});
-})
+router.get('/', (req, res) => {
+  try {
+    res.render('index', { layout: 'main', loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
 
 //bs added------
 const doctor = require('./doctor');
@@ -25,39 +33,8 @@ router.get('/signup', authController.signup_get);
 router.post('/signup', authController.signup_post);
 router.get('/login', authController.login_get);
 router.post('/login', authController.login_post);
-router.get('/',(req,res)=>{
-  res.render('index',{layout:'main'});
-
-});
 
 module.exports = router;
-// GET all patients
-// router.get('/', async (req, res) => {
-//   try {
-//     const patientsData = await Patient.findAll();
-//     const patients = patientsData.map(patient => patient.get({ plain: true }));
-//     res.render('patients', { patients });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-
-
-// GET all patients
-// router.get('/', async (req, res) => {
-//   try {
-//     const patientsData = await Patient.findAll();
-//     const patients = patientsData.map(patient => patient.get({ plain: true }));
-//     res.render('patients', { patients });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-router.get('/', (req, res)=> {
-  res.render('index', {layout:'main'});
-})
 
 
 

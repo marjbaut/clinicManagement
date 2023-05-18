@@ -1,7 +1,7 @@
 <div id="signupForm">
 
 
-  <form>
+  <form class="login-form">
     <h2>Log in</h2>
     <div class="form-group">
       <label for="email">Email</label>
@@ -11,37 +11,11 @@
       <label for="password">Password</label>
       <input type="password" class="form-control" id="password" name="password" required>
     </div>
+    <div id="loginMessage">login message</div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
 
-<script>
-  const form = document.querySelector('form');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
 
-    const email = form.email.value;
-    const password = form.password.value;
+<script src="./assets/js/login.js"></script>
 
-    try {
-      const res = await fetch('/login', {
-        method: 'POST',
-        body: JSON.stringify({ email, password }),
-
-        headers: { 'Content-Type': 'application/json' }
-      });
-      const data = await res.json();
-      const doctorUrl = data.id
-     // window.location.replace('/doctor/' + doctorUrl);
-      //console.log(data);
-
-    } catch (err) {
-      console.log(err);
-    }
-  });
-  //get the value from the form
-
-  const email = form.email.value;
-  const password = form.password.value;
-  console.log(email, password)
-</script>

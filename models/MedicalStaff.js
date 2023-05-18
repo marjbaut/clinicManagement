@@ -1,8 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('./User');
 class MedicalStaff extends Model { }
-
+const bcrypt = require('bcrypt');
 
 
 MedicalStaff.init(
@@ -39,25 +38,54 @@ MedicalStaff.init(
     specialist_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      defaultValue: 1,
       references: {
         model: 'specialty',
         key: 'id',  // <-- should be 'key', not 'user'
       },
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [8],
+      },
+    },
+
+    
   },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'medicalstaff',
-  }
+  
+    {
+      hooks: {
+        beforeCreate: async (newUserData) => {
+          if (newUserData.password) {
+            newUserData.password = await bcrypt.hash(newUserData.password, 10);
+          }
+          return newUserData;
+        },
+        
+        beforeUpdate: async (updatedUserData) => {
+          if (updatedUserData.password) {
+            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+          }
+          return updatedUserData;
+        },
+      },
+      sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'medicalstaff',
+    },
+  
 );
 
-
-// MedicalStaff.associate = (models) => {
-//   MedicalStaff.hasOne(models.User);
-// };
 
 module.exports = MedicalStaff;

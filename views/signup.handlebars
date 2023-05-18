@@ -40,6 +40,7 @@
   <div class="form-group">
     <label for="password">Password</label>
     <input type="password" class="form-control" id="password" name="password" required>
+    <div id="loginMessage"></div>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -65,6 +66,7 @@
         body: JSON.stringify({first_name: firstName, last_name: lastName, gender, phone_number: phone, role, email, password}),
         
         headers: { 'Content-Type': 'application/json' }
+        
       });
      
     } catch (err) {

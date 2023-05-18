@@ -5,8 +5,6 @@ const MedicalStaff = require('./MedicalStaff');
 
 class User extends Model {}
 
-
-
 User.init(
   {
     id: {
@@ -14,12 +12,22 @@ User.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+     
+      
+    },
+    medicalStaffId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'medicalStaff',
+        key: 'id',
+      },
       
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
+      allowNull: [false, 'Please enter an email'],
+      unique: [true, 'Email exists'],
       validate: {
         isEmail: true,
       },
@@ -31,15 +39,7 @@ User.init(
         len: [8],
       },
     },
-    medical_staff_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 1,
-      references: {
-        model: 'medicalStaff',
-        key: 'id',
-      },
-    },
+
     
   },
   {
