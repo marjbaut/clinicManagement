@@ -1,6 +1,11 @@
 const MedicalStaff = require('../../models/MedicalStaff')
 const login = require('./login');
 const router = require('express').Router();
+const { SequelizeStore } = require('connect-session-sequelize');
+
+const sequelize = require('../../config/connection');
+
+
 
 module.exports.signup_get = (req, res) => {
     res.render('signup');
@@ -37,23 +42,27 @@ const redirect = () => {
 
 
 exports.login_post = async (req, res) => {
-    const { email, password } = req.body;
-  
-    try {
-      const user = await login(email, password);
-      req.session.user = user; // Store user data in the session
-  
-      if (req.headers.accept.includes('application/json')) {
-        res.json({ redirect: `/doctor` });
-        // Send a JSON response with the redirect URL
-      } else {
-        console.log("redirecting to")
-        res.redirect('/doctor'); // Redirect to the doctor page for non-API requests
-      }
-    } catch (error) {
-      res.status(400).json({ message: error.message });
+  const { email, password } = req.body;
+
+  try {
+    const user = await login(email, password);
+    req.session.save(() => {
+      req.session.user = user;
+
+      res.status(200).json(dbUserData);
+    });
+
+    if (req.headers.accept.includes('application/json')) {
+      res.json({ redirect: `/doctor` });
+      // Send a JSON response with the redirect URL
+    } else {
+      console.log("redirecting to")
+      res.redirect('/doctor'); // Redirect to the doctor page for non-API requests
     }
-  };
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
   
   
 // ___________________________________________________________________________________________ LOGIN POST
