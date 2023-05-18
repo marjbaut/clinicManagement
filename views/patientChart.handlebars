@@ -1,58 +1,51 @@
-<div class="container ">
-  <div class="row justify-content center">
+<div class="container column-gap-5 pt-1 ">
+  <div class="row justify-content-between d-flex align-items-stretch ">
     {{!-- DOCTOR COLUMN --}}
-    <div class="col-4 border">
-      <div class="row border">
-        <h3>{{medicalstaff.role}} information</h3>
+    <div class="col-4  p-3 " id="patientChartColumns" >
+      <div class="row mb-3">
+        <h2>{{medicalstaff.role}} information</h2>
       </div>
       {{!-- DOCTOR INFO --}}
-      <div class="row border">
-        <h1>{{medicalstaff.first_name}} {{ medicalstaff.last_name }}<h1>
-            <h2>Contact Information:</h2>
+      <div class="row border-top pt-4">
+        <h3>{{medicalstaff.first_name}} {{ medicalstaff.last_name }}<h3>
+            {{!-- <h3>Contact Information:</h3> --}}
             <ul>
               <h4>Doctor's ID: {{medicalstaff.id}}</h4>
-              <h4>Gender: {{gender}}</h4>
               <h4>Phone Number: {{medicalstaff.phone_number}} </h4>
             </ul>
       </div>
     </div>
     {{!-- PATIENT COLUMN --}}
-    <div class="col-4 border">
+    <div class="col-5  p-3" id="patientChartColumns">
       {{!-- PATIENT NAME --}}
-      <div class="row border">
-        <h3>Patient information</h3>
+      <div class="row  mb-3">
+        <h2>Patient information</h2>
       </div>
       {{!-- PATIENT INFO --}}
-      <div class="row border">
-        <h1>{{last_name}}, {{first_name}} <h1>
-            <ul>
+      <div class="row border-top pt-4 ">
+        <h3>{{last_name}}, {{first_name}} <h3>
+            <ul >
               <h4>Gender: {{gender}}</h4>
               <h4>DOB: {{date_of_birth}}</h4>
               <h4>Email: {{email}}</h4>
               <h4>Phone Number: {{phone_number}}</h4>
               <h4>Address: {{address}}</h4>
+              <h4>Next appointment is on: </h4>
+              <h4>{{appointment.date}}</h4>
+              <h4>Reason for the appointment:</h4>
+              <h4>{{appointment.appointment_type}}</h4>
             </ul>
       </div>
     </div>
     {{!--DOCTOR'S NOTE --}}
-    <div class="col-4 border">
-      <div class="row">
-        <ul>
-          <h3>Next appointment is on: </h3>
-          <li>{{appointment.date}}</li>
-          <h3>Reason for the appointment:</h3>
-          <li>{{appointment.appointment_type}}:</li>
-        </ul>
+    <div class="col-3 p-3 " id="patientChartColumns">
+      <div class="row  mb-3">
+        <h2>Patient History</h2>
       </div>
-      <div class="row">
-        <h3>Patient History:</h3>
-        <form class="mb-3" id="noteForm">
-          <label for="exampleFormControlTextarea1" class="form-label">Add note to patient history:</label>
-          <textarea type="doctorNote" id="doctorNoteInput" rows="3">{{medical_notes}}</textarea>
-          <button type="submit" class="btn btn-primary" data-patient-id="{{id}}">Submit</button>
-        </form>
-      </div>
-
+      <form class="mb-3 border-top p-4" id="noteForm">
+        <textarea type="doctorNote" id="doctorNoteInput " rows="10">{{medical_notes}}</textarea>
+        <button type="submit" class="btn btn-primary" data-patient-id="{{id}}">Save</button>
+      </form>
     </div>
 
   </div>

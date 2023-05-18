@@ -119,3 +119,22 @@ h2 {
     margin-left: 5px;
   }
 
+#patientChartColumns h4{
+
+    padding: 10px; 
+    justify-content: left;}
+    /* #patientChartColumns h4 */
+#patientChartColumns h2{
+    font-size: 35px;
+    justify-content: center;
+    font-weight:500;
+    color: blue;
+  }
+  #patientChartColumns ul{
+    padding-left: 0%;
+  }
+  #patientChartColumns h3{
+    font-size: 30 px;
+    justify-content: center;
+    font-weight:600;
+  }
