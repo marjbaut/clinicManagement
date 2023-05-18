@@ -2,7 +2,7 @@
 
 <section class="greeting">
 
-    <div class="col-md-5">
+    <div class="col-md-5 mt-5">
       <div class="card-body">
         <h3 class="card-title">Good Morning!</h3>
         Name<p>{{last_name}}{{first_name}}</p>
@@ -30,10 +30,10 @@
       <div class="row mb-3">
         <div class="col">
           
-            <input type="text" class="form-control" placeholder="First name">
+            <input type="text" class="form-control" id="firstNameInput" placeholder="First Name">
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="Last name">
+            <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name">
         </div>
       </div>
 
@@ -42,7 +42,7 @@
             <input type="string" class="form-control" id="inputDateOfBirth">
           </div>
 
-          <select class="form-select mb-3" aria-label="Default select example">
+          <select class="form-select mb-3" id="genderInput" aria-label="Default select example">
             <option selected>Gender Choice</option>
             <option value="1">Male</option>
             <option value="2">Female</option>
@@ -50,28 +50,10 @@
           </select>
 
           <div class="">
-            <label for="inputAddress" class="form-label">Address</label>
+            <label for="inputAddress" class="form-label">Address(street, city, state, zipcode)</label>
             <input type="string" class="form-control mb-3" id="inputAddress" placeholder="1234 Main St">
           </div>
-          <div class="">
-            <label for="inputAddress2" class="form-label mb-3">Address 2</label>
-            <input type="string" class="form-control mb-3" id="inputAddress2" placeholder="Apartment, studio, or floor">
-          </div>
-          <div class="">
-            <label for="inputCity" class="form-label">City</label>
-            <input type="string" class="form-control mb-3" id="inputCity">
-          </div>
-          <div class="">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select mb-3">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
-          </div>
-          <div class="mb-3">
-            <label for="inputZip" class="form-label">Zip</label>
-            <input type="string" class="form-control" id="inputZip">
-          </div>
+         
 
         <div class="input group mb-3">
             <label for="inputPhoneNumber" class="form-label">Phone Number</label>
@@ -96,3 +78,53 @@
   </div>
 </main>
 
+<script>
+const addPatient = document.querySelector('addPatient');
+
+const formSubmission = async (e) => {
+    e.preventDefault();
+
+    const firstNameValue = document.getElementById('firstNameInput').value;
+    console.log(firstNameValue);
+    const lastNameValue = document.getElementById('lastNameInput').value;
+    console.log(lastNameValue);
+    const birthDateValue = document.getElementById('inputDateOfBirth').value;
+    console.log(birthDateValue);
+    const genderValue = document.getElementById('genderInput').value;
+    console.log(genderValue);
+    const addressValue = document.getElementById('inputAddress').value;
+    console.log(addressValue);
+    const phoneNumberValue = document.getElementById('inputPhoneNumber').value;
+    console.log(phoneNumberValue);
+    const emailValue = document.getElementById('inputEmail4').value;
+    console.log(emailValue);
+    const doctorIdValue = document.getElementById('inputDoctorID').value;
+    console.log(doctorIdValue);
+
+
+    const postValue = await fetch('/doctor', {
+        method: "POST",
+        body: JSON.stringify({
+           first_name: firstNameValue
+           last_name: lastNameValue
+           date_of_birth: birthDateValue
+           gender: genderValue
+           address: addressValue
+           phone_number: phoneNumberValue
+           email: emailValue
+           primary_doctorId: doctorIdValue
+
+        }),
+        headers: { 'Content-Type': 'application/json' },
+    })
+
+if(postValue.ok) {
+        alert("Form Submitted Successfully");
+    } else {
+        alert('Form Not Submitted Correctly');
+    }
+}
+
+addPatient.addEventListener('submit', formSubmission);
+
+</script>
