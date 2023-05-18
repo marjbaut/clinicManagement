@@ -45,17 +45,17 @@
         </ul>
       </div>
       <div class="row">
-        <ul>
-          <h3>Patient History:</h3>
-          <li>{{appointment.notes}} </li>
-        </ul>
-        <div class="mb-3">
+        <h3>Patient History:</h3>
+        <form class="mb-3" id="noteForm">
           <label for="exampleFormControlTextarea1" class="form-label">Add note to patient history:</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
+          <textarea type="doctorNote" id="doctorNoteInput" rows="3">{{medical_notes}}</textarea>
+          <button type="submit" class="btn btn-primary" data-patient-id="{{id}}">Submit</button>
+        </form>
       </div>
 
     </div>
-    
+
   </div>
 </div>
+
+<script src="/js/index.js"></script>
