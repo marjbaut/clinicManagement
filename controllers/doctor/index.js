@@ -9,23 +9,16 @@ const { MedicalStaff } = require("../../models");
 
 // localhost:3001
 router.get('/', async (req, res) => {
-    const userData = await MedicalStaff.findAll({
-        attributes: [
-            'first_name',
-            'last_name',
-            'gender',
-            'phone_number',
-            'role',
-            'specialist_id'
-        ]
-    });
-
-    const prettyUserData = userData.map((medicalStaff) => medicalStaff.get({plain: true}));
-    //console.log("NO STAINS!", prettyUserData);
-    res.render('doctor');
-
-
-    });
+    try {
+    const doctorData = await MedicalStaff.findAll();
+    const doctormap = doctorData.map((doc)=> doc.get({plain: true}))
+    
+    console.log('data', doctormap);
+    res.render('doctorList', {doctormap});
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
 
     // localhost:3001/doctor/:doctor_id
 router.get('/:doctor_id', async (req, res) => {
