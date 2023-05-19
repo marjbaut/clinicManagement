@@ -26,8 +26,8 @@ const patientList = require('./patientList');
 router.use('/patientList', patientList);
 
 
-// const newpatient = require('./newpatient');
-// router.get('/newpatient', newpatient);
+const newpatient = require('./newpatient');
+router.use('/newpatient', newpatient);
 
 
 router.get('/signup', authController.signup_get);
