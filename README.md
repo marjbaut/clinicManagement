@@ -60,3 +60,5 @@
 ## Deployed Application
 
   [Clinic Management System](https://clinic-management-system-proj2.herokuapp.com/)
+
+  ![Clinic Webpage Screenshot](./public/images/clinic-management-system-proj2.herokuapp.com_.png)
