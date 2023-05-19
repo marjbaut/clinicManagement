@@ -12,11 +12,14 @@ if(email && password) {
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
   });
+  console.log(response)
   if (response.ok) {
-    document.location.replace('/doctor');
+  
+    document.location.replace(response.url);
     console.log("successful response")
   } else {
-    alert(response.statusText);
+    document.getElementById('loginMessage').innerText = 'Email or Password not found';
+
   }
   }
 });
@@ -25,3 +28,4 @@ if(email && password) {
 document
 .querySelector('.login-form')
 .addEventListener('submit', loginForm);
+

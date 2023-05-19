@@ -5,7 +5,7 @@ const session = require('express-session')
 
 router.get('/', (req, res) => {
   try {
-    res.render('index', { layout: 'main', loggedIn: req.session.loggedIn });
+    res.render('index', { layout: 'main'});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -25,8 +25,9 @@ const patientList = require('./patientList');
 //  localhost:3001/patients
 router.use('/patientList', patientList);
 
-//mb-------
 
+const newpatient = require('./newpatient');
+router.use('/newpatient', newpatient);
 
 
 router.get('/signup', authController.signup_get);

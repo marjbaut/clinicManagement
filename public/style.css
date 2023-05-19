@@ -11,13 +11,18 @@ body{
     text-align: center;
 }
 
+
+
+    /* margin-top: 15rem;
+
 #title {
     margin-top: 15rem;
+
     font-family: 'Poppins', sans-serif;
     font-size: 80px;
     font-style: oblique;
     font-weight: bolder;
-}
+} */
 
 div.row {
     width: 100%;
@@ -84,7 +89,7 @@ h2 {
 }
 
 .addPatient {
-    width: 100%;
+    width: 50%;
     align-items: center;
     border: 2px solid black;
     border-radius: 1rem;
@@ -111,13 +116,47 @@ h2 {
   .listChart {
     margin-top: 30px;
     border: 2px solid black;
-    width: 300px;
+    width: 40%;
+    text-align: left;
+    padding-left: 5%;
+    padding-top:2%
   }
   
   .names{
     display: inline-flex;
     margin-left: 5px;
   }
+  .greeting{
+    width: 20%;
+    margin-right:5%;
+  }
+
+.name{
+    display: flex;
+    align-items: center;
+}
+
+.login-form{
+    margin-top: 40%;
+}
+.signup-form{
+    margin-top: 20%;
+}
+.topPage{
+    margin-top: 12%
+   
+}
+.doctorInfo{
+   
+    background-color:transparent;
+}
+.card{
+    background-color: transparent;
+    border: none;
+}
+.container{
+    margin-top: 10%;
+}
 
 #patientChartColumns h4{
 
@@ -138,3 +177,4 @@ h2 {
     justify-content: center;
     font-weight:600;
   }
+
