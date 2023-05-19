@@ -1,78 +1,39 @@
+<main class="container">
 
+  <section class="greeting">
 
-<section class="greeting">
-
-    <div class="col-md-5 mt-5">
+    
       <div class="card-body">
         <h3 class="card-title">Good Morning!</h3>
-        Name<p>{{last_name}}{{first_name}}</p>
-        Gender<p>{{gender}}</p>
-        Email<p>{{email}}</p>
-        Phone Number<p>{{phone_number}}</p>
-        Role<p>{{role}}</p>
-        Specialty<p>{{specialist_id}}</p>
+        Name: {{last_name}} {{first_name}}<br>
+        Gender: {{gender}}<br>
+        Email: {{email}}<br>
+        Phone: {{phone_number}}<br>
+        Role: {{role}}<br>
+
+      <a href="/patientList"><button type="button" id="btn" class="btn btn-primary btn-lg col-md-12">Current
+          Patients</button></a>
       </div>
-      <a href="/patientList"><button type="button" id="btn" class="btn btn-primary btn-lg col-md-12">Current Patients</button></a>
-</div>
+    
   </section>
 
-
-      
-
-
-<main class="container">
-  <div class="row">
-
-      <div class="col-md-7">
-        <h2>Add New Patient</h2>
-        <form class="addPatient">
-
-      <div class="row mb-3">
-        <div class="col">
-          
-            <input type="text" class="form-control" id="firstNameInput" placeholder="First Name">
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name">
-        </div>
-      </div>
-
-          <div class="input group mb-3">
-            <label for="inputDateOfBirth" class="form-label">Date of Birth(MM-DD-YYYY)</label>
-            <input type="string" class="form-control" id="inputDateOfBirth">
-          </div>
-
-          <div class="input group mb-3">
-            <label for="genderInput" class="form-label">Gender</label>
-            <input type="string" class="form-control" id="genderInput">
-          </div>
-
-          <div class="">
-            <label for="inputAddress" class="form-label">Address(street, city, state, zipcode)</label>
-            <input type="string" class="form-control mb-3" id="inputAddress" placeholder="1234 Main St">
-          </div>
-
-
-        <div class="input group mb-3">
-            <label for="inputPhoneNumber" class="form-label">Phone Number</label>
-            <input type="string" class="form-control" id="inputPhoneNumber">
-          </div>
-
-          <div class="input group mb-3">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="string" class="form-control" id="inputEmail4">
-          </div>
-
-         <div class="input group mb-3">
-            <label for="inputDoctorID" class="form-label">Primary Doctor ID</label>
-            <input type="string" class="form-control" id="inputDoctorID">
-          </div>
-
-        <div class="submit">
-          <input class="btn btn-primary" onclick="formSubmission()" value="Submit">
-        </div>
-      </form>
+  <form class="addPatient">
+  <h2>Add New Patient</h2>
+    <div class="name">
+      <input type="text" class="form-control " id="firstNameInput" placeholder="First Name"><br>
+      <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name"><br>
     </div>
+    <br>
+    <input type="string" class="form-control" id="inputDateOfBirth" placeholder="Date of Birth(MM-DD-YYYY)"><br>
+    <input type="string" class="form-control" id="genderInput" placeholder="Gender"><br>
+    <input type="string" class="form-control" id="inputAddress" placeholder="1234 Main St"><br>
+    <input type="string" class="form-control" id="inputPhoneNumber" placeholder="Phone Number"><br>
+    <input type="string" class="form-control" id="inputEmail4" placeholder="Email"><br>
+    <input type="string" class="form-control" id="inputDoctorID" placeholder="Primary Doctor ID"><br>
+    <input class="btn btn-primary" onclick="formSubmission()" value="Submit"><br>
+    </div>
+  </form>
+  </div>
   </div>
 </main>
 

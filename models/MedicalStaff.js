@@ -28,7 +28,7 @@ MedicalStaff.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [10],
+        len: [1],
       },
     },
     role: {
@@ -46,7 +46,7 @@ MedicalStaff.init(
     email: {
       type: DataTypes.STRING,
       allowNull: true,
-      unique: true,
+      unique: false,
       validate: {
         isEmail: true,
       },

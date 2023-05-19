@@ -39,28 +39,18 @@ const sess = {
 
 
 app.use(session(sess));
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname,'/public')));
 app.use(authRoutes)
 app.use(controllers);
 
-
-
-
-
-const authenticateUser = (req, res, next) => {
-  if (req.session.user) {
-    next(); // User is authenticated, proceed to the next middleware/route handler
-  } else {
-    res.redirect('/login'); // User is not authenticated, redirect to the login page
-  }
-};
-
-app.get('/doctor', authenticateUser, (req, res) => {
+app.get('/',  (req, res) => {
   // Handle the protected route logic
-  res.redirect('/patientlist');
+  req.session.isAuth = true;
+  console.log(req.session);
+  console.log(req.session.id);
+  res.send('Hello Sessions');
 });
 
 

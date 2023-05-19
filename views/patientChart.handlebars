@@ -1,61 +1,70 @@
-<div class="container ">
-  <div class="row justify-content center">
-    {{!-- DOCTOR COLUMN --}}
-    <div class="col-4 border">
-      <div class="row border">
-        <h3>{{medicalstaff.role}} information</h3>
-      </div>
-      {{!-- DOCTOR INFO --}}
-      <div class="row border">
-        <h1>{{medicalstaff.first_name}} {{ medicalstaff.last_name }}<h1>
-            <h2>Contact Information:</h2>
-            <ul>
-              <h4>Doctor's ID: {{medicalstaff.id}}</h4>
-              <h4>Gender: {{gender}}</h4>
-              <h4>Phone Number: {{medicalstaff.phone_number}} </h4>
-            </ul>
-      </div>
-    </div>
-    {{!-- PATIENT COLUMN --}}
-    <div class="col-4 border">
-      {{!-- PATIENT NAME --}}
-      <div class="row border">
-        <h3>Patient information</h3>
-      </div>
-      {{!-- PATIENT INFO --}}
-      <div class="row border">
-        <h1>{{last_name}}, {{first_name}} <h1>
-            <ul>
-              <h4>Gender: {{gender}}</h4>
-              <h4>DOB: {{date_of_birth}}</h4>
-              <h4>Email: {{email}}</h4>
-              <h4>Phone Number: {{phone_number}}</h4>
-              <h4>Address: {{address}}</h4>
-            </ul>
+<div class="container">
+  <div class="row justify-content-center">
+    <!-- DOCTOR COLUMN -->
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body doctorInfo">
+          <h3 class="card-title">{{medicalstaff.role}}'s Information</h3>
+          <!-- DOCTOR INFO -->
+          <p><strong><h1>{{medicalstaff.first_name}} {{medicalstaff.last_name}}</h1></strong></p>
+          <p>Additional details:</p>
+          <ul class="list-unstyled">
+            <li><strong>Doctor's ID:</strong> {{medicalstaff.id}}</li>
+            <li><strong>Gender:</strong> {{medicalstaff.gender}}</li>
+            <li><strong>Phone Number:</strong> {{medicalstaff.phone_number}}</li>
+          </ul>
+        </div>
       </div>
     </div>
-    {{!--DOCTOR'S NOTE --}}
-    <div class="col-4 border">
-      <div class="row">
-        <ul>
-          <h3>Next appointment is on: </h3>
-          <li>{{appointment.date}}</li>
-          <h3>Reason for the appointment:</h3>
-          <li>{{appointment.appointment_type}}:</li>
-        </ul>
+  
+    <!-- PATIENT COLUMN -->
+    <div class="col-lg-4">
+      <div class="card patientInfo">
+        <div class="card-body">
+          <h3 class="card-title">Patient Information</h3>
+          <h1>{{last_name}}, {{first_name}}</h1>
+          <ul class="list-unstyled">
+            <li><strong>Gender:</strong> {{gender}}</li>
+            <li><strong>DOB:</strong> {{date_of_birth}}</li>
+            <li><strong>Email:</strong> {{email}}</li>
+            <li><strong>Phone Number:</strong> {{phone_number}}</li>
+            <li><strong>Address:</strong> {{address}}</li>
+          </ul>
+        </div>
       </div>
-      <div class="row">
-        <h3>Patient History:</h3>
-        <form class="mb-3" id="noteForm">
-          <label for="exampleFormControlTextarea1" class="form-label">Add note to patient history:</label>
-          <textarea type="doctorNote" id="doctorNoteInput" rows="3">{{medical_notes}}</textarea>
-          <button type="submit" class="btn btn-primary" data-patient-id="{{id}}">Submit</button>
-        </form>
-      </div>
-
     </div>
-
+  
+    <!-- DOCTOR'S NOTE -->
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <ul class="list-unstyled">
+            <h5 class="card-title">Next Appointment:</h5>
+            <li>{{appointment.date}}</li>
+            <h5 class="card-title">Reason for the Appointment:</h5>
+            <li>{{appointment.appointment_type}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card mt-4">
+        <div class="card-body">
+          <h3 class="card-title">Patient History:</h3>
+          <form class="mb-3" id="noteForm">
+            <label for="doctorNoteInput" class="form-label">Add Note to Patient History:</label>
+            <textarea id="doctorNoteInput" class="form-control" rows="3">{{medical_notes}}</textarea>
+            <button type="submit" class="btn btn-primary" data-patient-id="{{id}}">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  
   </div>
 </div>
+
+
+      
+ 
+  
+
 
 <script src="/js/index.js"></script>

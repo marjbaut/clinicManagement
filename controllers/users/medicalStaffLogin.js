@@ -1,3 +1,5 @@
+//login function that utilizes bcrypt for password comparison and interacts with a MedicalStaff model
+
 const bcrypt = require('bcrypt');
 const MedicalStaff = require('../../models/MedicalStaff');
 
@@ -6,7 +8,7 @@ const login = async (email, password) => {
   if (foundUser) {
     const auth = await bcrypt.compare(password, foundUser.password);
     if (auth) {
-      return true;
+      return foundUser;
     } else {
       throw new Error('Incorrect password');
     }

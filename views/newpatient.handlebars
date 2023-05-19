@@ -1,0 +1,57 @@
+<form id="newPatientForm" class="needs-validation" novalidate>
+  <div class="mb-3">
+    <label for="firstNameInput" class="form-label">First Name</label>
+    <input type="text" class="form-control" id="firstNameInput" placeholder="Enter first name" required>
+    <div class="invalid-feedback">
+      Please provide a first name.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="lastNameInput" class="form-label">Last Name</label>
+    <input type="text" class="form-control" id="lastNameInput" placeholder="Enter last name" required>
+    <div class="invalid-feedback">
+      Please provide a last name.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="genderInput" class="form-label">Gender</label>
+    <select class="form-select" id="genderInput" required>
+      <option value="" selected disabled>Select gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    <div class="invalid-feedback">
+      Please select a gender.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="phoneNumberInput" class="form-label">Phone Number</label>
+    <input type="tel" class="form-control" id="phoneNumberInput" placeholder="Enter phone number" required>
+    <div class="invalid-feedback">
+      Please provide a valid phone number.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="emailInput" class="form-label">Email</label>
+    <input type="email" class="form-control" id="emailInput" placeholder="Enter email" required>
+    <div class="invalid-feedback">
+      Please provide a valid email address.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="passwordInput" class="form-label">Password</label>
+    <input type="password" class="form-control" id="passwordInput" placeholder="Enter password" required>
+    <div class="invalid-feedback">
+      Please provide a password.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="confirmPasswordInput" class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" id="confirmPasswordInput" placeholder="Confirm password" required>
+    <div class="invalid-feedback">
+      Please confirm your password.
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
