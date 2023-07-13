@@ -23,16 +23,19 @@
 ## Contribution
   General Scope of duties:
 #### Jennifer 
+- created the database
 - created seed data
 - contributed in config/server file
 - created get all route for patient
 - contributed in handlebars
 #### Marjorie
+- created the database
 - created tables
 - contributed in the models/index.js 
 - created get by id route for patient
 - contributed in handlebars
 #### Brandon
+- created the database
 - contributed in the models/index.js 
 - created post route for patient
 - contributed in handlebars
